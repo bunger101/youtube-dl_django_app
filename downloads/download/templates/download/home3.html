@@ -1,0 +1,54 @@
+{% extends "download/base.html" %}
+
+{% block content %}
+
+{% block titleX %}
+    
+<h1 class="title3" data-text="Youtube Download Website">
+    <i>
+        You're downloading in Audio extension...
+    </i>
+</h1>
+
+{% endblock titleX %}
+
+    {% if title %}
+    
+        <p class="v-title"><b>{{ title }}</b></p>
+
+        <center>
+            <section class="infos">
+                <ol><i class="fa fa-clock-o"> (Duration): <b>{{ duration }} s</b></i></ol>
+                <ol><i class="fa fa-eye"> (Views): <b>{{ views }}</b></i></ol>
+            </section>
+        </center>
+
+        <div class="img-thumb">
+            <img class="img-responsive" src="{{ thumb }}">
+        </div>
+
+        <div class="downloads">
+            <table style="margin: 0 auto">
+                <tr>
+                    <th scope="col">Resolution</th>
+                    <th scope="col">File Size</th>
+                    <th scope="col">Format</th>
+                    <th scope="col">Download</th>
+                </tr>
+                <tr>
+                    {% for stream in streams %}
+                        <tr>
+                            <td><b>{{ stream.resolution }}</b></td>
+                            <td><b>{{ stream.file_size }}</b></td>
+                            <td><b>{{ stream.extension }}</b></td>
+                            <td><a href="{{ stream.video_url }}" download="{{ title }}.{{ extension }}">
+                                <i class=" fa fa-download"></i></a></td>
+                        </tr>
+                    {% endfor %}
+                </tr>
+            </table>
+        </div>
+
+    {% endif %}
+
+{% endblock content %}
