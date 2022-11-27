@@ -11,6 +11,10 @@ needed to be delivered.
 So hope you all enjoy and don't criticize me too much for some or another
 "basic errors in the pilars of coding"
 
+To execute the code introduce the command:
+"python manage.py runserver"
+, in the "downloads/" directory (there's the "manage.py" script).
+
 Thank you.
 
 Oh!, and if you see too much libraries installed in the "requirements.txt" file
